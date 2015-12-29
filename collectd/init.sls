@@ -6,6 +6,7 @@ include:
 collectd:
   pkg.installed:
     - name: {{ collectd_settings.pkg }}
+    - install_recommends: False
     {%- if collectd_settings.pkg_version is defined and collectd_settings.pkg_version %}
     - version: '{{ collectd_settings.pkg_version }}'
     {%- endif %}
